@@ -31,16 +31,7 @@
     user, and adding that card to the DOM.
 */
 
-const followersArray = ['https://api.github.com/users/tetondan', 'https://api.github.com/users/dustinmyers', 'https://api.github.com/users/justsml', 'https://api.github.com/users/luishrd', 'https://api.github.com/users/bigknell'];
 
-followersArray.forEach(user => {
-  axios.get(user)
-  .then((successResponse) => {
-    console.log(successResponse);
-    cards.appendChild(userCard(successResponse.data));
-  })
-  .catch(error => console.log(error))
-})
 
 
 /*
@@ -133,3 +124,15 @@ const userCard = (data) => {
     luishrd
     bigknell
 */
+
+
+const followersArray = ['https://api.github.com/users/tetondan', 'https://api.github.com/users/dustinmyers', 'https://api.github.com/users/justsml', 'https://api.github.com/users/luishrd', 'https://api.github.com/users/bigknell'];
+
+followersArray.forEach(user => {
+  axios.get(user)
+  .then((successResponse) => {
+    console.log(successResponse);
+    cards.appendChild(userCard(successResponse.data));
+  })
+  .catch(error => console.log(error))
+})
